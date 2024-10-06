@@ -1,0 +1,41 @@
+﻿@model List<electrates>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1 class="text-center mb-5">List of data</h1>
+
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn btn-primary" asp-controller="elect" asp-action="Create">ADD Data</a>
+    </div>
+    <div class="col"></div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Kilo Watt Per Hour Rates</th>
+            <th>Total Bill</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.dates1</td>
+                <td>@item.kwrate</td>
+                <td>@item.totbillelec</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-controller="Elect" asp-action="Edit">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" asp-controller="Elect" asp-action="Delete">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
